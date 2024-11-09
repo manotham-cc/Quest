@@ -1,0 +1,24 @@
+{
+    "jobs": [
+        {
+            "job_id": "001",
+            "title": "webdev",
+            "description": "ทำหารบ้าน",
+            "location": "Lat: 13.65134, Lng: 100.49393",
+            "date_posted": "2024-11-09",
+            "requirements": [],
+            "price": 4040,
+            "status": "open"
+        },
+        {
+            "job_id": "002",
+            "title": "webdev",
+            "description": "ทำเว็บมอ",
+            "location": "Lat: 13.65120, Lng: 100.49411",
+            "date_posted": "2024-11-09",
+            "requirements": [],
+            "price": 44,
+            "status": "open"
+        }
+    ]
+}

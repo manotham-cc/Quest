@@ -1,0 +1,258 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f0f0f0;
+  background: #6c35b5;
+}
+
+/* Full height setup with centered form */
+.min-h-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+  background: linear-gradient(to bottom, #6c35b5, #4c2075);
+}
+
+/* Form container styling */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(35, 20, 85, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.form-container:hover {
+  transform: scale(1.02);
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.header-content h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input and Textarea styling */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(75, 39, 129, 0.4);
+  border: 1px solid rgba(147, 97, 255, 0.4);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  background-color: rgba(75, 39, 129, 0.6);
+  border-color: #6e2bc7;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(200, 150, 255, 0.7);
+  font-style: italic;
+}
+
+/* Location group styling */
+.location-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Button styling */
+.choose-button, .submit-button {
+  background-color: #6e2bc7;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.choose-button:hover, .submit-button:hover {
+  background-color: #5b21b6;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+/* Flex groups for categories and price */
+.group-flex {
+  display: flex;
+  gap: 16px;
+}
+
+.category-group, .price-group {
+  flex: 1;
+}
+
+/* Price input styling */
+.price-input {
+  position: relative;
+}
+
+.icon-small {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .input, .price-input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  .submit-button, .choose-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* Map Modal */
+.map-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#leaflet-map {
+  width: 80%;
+  height: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.map-modal button {
+  position: absolute;
+  bottom: 20px;
+  background-color: #6e2bc7;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.map-modal button:hover {
+  background-color: #5b21b6;
+}
+.map-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+.map-modal.active {
+  display: flex;
+}
+#leaflet-map {
+  width: 80%;
+  height: 60%;
+}
+/* Requirements Section Styling */
+#requirementInput {
+  width: calc(100% - 110px); /* Adjust width to fit alongside button */
+  padding: 10px 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: rgba(75, 39, 129, 0.4);
+  border: 1px solid rgba(147, 97, 255, 0.4);
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#requirementInput::placeholder {
+  color: rgba(200, 150, 255, 0.7);
+  font-style: italic;
+}
+
+#requirementsList {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #ffffff;
+  list-style-type: disc;
+}
+
+#requirementsList li {
+  padding: 8px;
+  font-size: 16px;
+}
+
+button[type="button"] {
+  background-color: #6e2bc7;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #5b21b6;
+}
+

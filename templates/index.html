@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Quest</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+  <div class="min-h-screen bg-gradient-to-b from-purple-900 to-purple-800 flex items-center justify-center p-4">
+    <div class="form-container">
+      <div class="header">
+        <div class="header-content">
+          <h1>Create Quest</h1>
+        </div>
+      </div>
+
+      <form id="questForm" class="form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Quest's Name</label>
+          <input type="text" id="name" name="name" placeholder="Quest's Name" class="input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="detail">Quest's Detail</label>
+          <textarea id="detail" name="detail" placeholder="Quest's Detail" class="input" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Quest's Location</label>
+          <div class="location-group">
+            <input type="text" id="location" name="location" placeholder="Quest's Location" class="input" readonly required />
+            <button type="button" class="choose-button" onclick="openLeafletMap()">
+              <img src="{{ url_for('static', filename='images/map_776559.png') }}" alt="Map Pin" class="icon-small" />
+              Choose
+            </button>
+          </div>
+        </div>
+
+        <!-- Map Modal -->
+        <div id="leaflet-map-modal" class="map-modal">
+          <div id="leaflet-map"></div>
+          <button onclick="confirmLeafletLocation()">Confirm Location</button>
+          <button onclick="cancelLeafletLocation()">Cancel</button>
+        </div>
+
+        <div class="form-group group-flex">
+          <div class="category-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" class="input" required>
+              <option value="">Category</option>
+              <option value="adventure">Adventure</option>
+              <option value="puzzle">Puzzle</option>
+              <option value="challenge">Challenge</option>
+            </select>
+          </div>
+
+          <div class="price-group">
+            <label for="price">Price</label>
+            <div class="price-input">
+              <input type="number" id="price" name="price" placeholder="Price" class="input" required />
+              <img src="{{ url_for('static', filename='images/coin-stack_8661747.png') }}" alt="Coins" class="icon-small" />
+            </div>
+          </div>
+        </div>
+        <!-- Requirements Section -->
+    <div>
+      <label>Requirements</label>
+      <div>
+        <input type="text" id="requirementInput" placeholder="Add a requirement" />
+        <button type="button" onclick="addRequirement()">Add Requirement</button>
+      </div>
+      <ul id="requirementsList"></ul> <!-- Display added requirements -->
+    </div>
+
+        <button type="submit" class="submit-button">
+          <img src="{{ url_for('static', filename='images/trophy_1168929.png') }}" alt="Trophy" class="icon-small" />
+          <span>Post Quest</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
